@@ -29,11 +29,21 @@ final class Kernel
     /**
      * Kernel constructor.
      *
-     * @param \Psr\Http\Server\RequestHandlerInterface $requestHandler
+     * @param  \Psr\Http\Server\RequestHandlerInterface $requestHandler
      */
     public function __construct(RequestHandlerInterface $requestHandler)
     {
         $this->requestHandler = $requestHandler;
+    }
+
+    /**
+     * @param  \Psr\Http\Server\RequestHandlerInterface $requestHandler
+     *
+     * @return \Narration\Http\Kernel
+     */
+    public static function using(RequestHandlerInterface $requestHandler): self
+    {
+        return new self($requestHandler);
     }
 
     /**
