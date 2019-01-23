@@ -49,7 +49,7 @@ final class Kernel
     /**
      * @param \Psr\Http\Message\ServerRequestInterface $serverRequest
      */
-    public function handle(ServerRequestInterface $serverRequest): void
+    public function dispatch(ServerRequestInterface $serverRequest): void
     {
         $runner = new RequestHandlerRunner($this->requestHandler, new SapiEmitter(), function () use ($serverRequest) {
             return $serverRequest;

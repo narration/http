@@ -10,7 +10,7 @@ final class Request
     /**
      * @return \Psr\Http\Message\ServerRequestInterface
      */
-    public function capture(): ServerRequestInterface
+    public static function capture(): ServerRequestInterface
     {
         return ServerRequestFactory::fromGlobals();
     }
